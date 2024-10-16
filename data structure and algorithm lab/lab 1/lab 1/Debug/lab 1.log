@@ -1,0 +1,4 @@
+﻿  Task_4.cpp
+D:\semester 4\data structure and algorithm lab\lab 1\lab 1\Task_4.cpp(48,52): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\semester 4\data structure and algorithm lab\lab 1\lab 1\Task_4.cpp(49,26): warning C4305: 'initializing': truncation from 'double' to 'float'
+  lab 1.vcxproj -> D:\semester 4\data structure and algorithm lab\lab 1\Debug\lab 1.exe
