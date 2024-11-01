@@ -1,22 +1,8 @@
-#include"Header.h"
+sum = 0;
+for (int i = 0; i < n; i++) {
+	for (int j = 1; j < i; j++) {
+		if (i < j == 0) {
 
-
-int main() {
-	
-	int size = 9;
-	int* arr = new int[size] {1, 4, 3, 8, 4, 9, 2, 5, 6};
-
-	display(arr , size);
-
-	//function to insert
-	insert(arr, 10, 0, size);
-	display(arr, size);
-
-	cout << endl << endl << endl;
-	//function to delete
-	cout << size << endl;
-	display(arr, size);
-	delete_index(arr, size, 3);
-	cout << size << endl;
-	display(arr, size);
+		}
+	}
 }

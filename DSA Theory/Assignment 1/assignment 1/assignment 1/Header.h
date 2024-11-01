@@ -20,7 +20,7 @@ void delete_index(t arr, int &size ,int index) {
 		// we will j move all the elements in one direction and that element will be overriden
 		// we will update the size of the array after deleting an element.
 		for (int i = index; i <= size; i++) {
-			cout << "doing" << endl;
+			
 			arr[i] = arr[i+ 1];
 		}
 		//this is not passed by reference so i need to send the size by reference in this case
