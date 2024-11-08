@@ -6,13 +6,25 @@ template <typename T>
 void reverseBooks( myStack<T>& obj1, myStack<T>& obj2) {
 	string temp = "";
 	while(!obj1.isEmpty() )  {
-		cout << "here" << endl;
+		//cout << "here" << endl;
 		temp =  obj1.pop();
-		cout << temp << endl;
+		//cout << "obj1: " << temp << endl;
 		obj2.push(temp);
-		cout << obj2.top();
+		
 	}
 	
+	//int i = 0;
+	//cout << obj2.getcurrentSize() << endl;
+	for(int i  = 0 ; i < obj2.getcurrentSize() ; i++) {
+		obj1.push(obj2.arr[i]);
+	}
+
+	// emptying the obj2 stack
+	while (!obj2.isEmpty()) {
+		obj2.pop();
+	}
+
+
 	// using the copy constructor to copy all the contents of obj2 into obj1
 	// so that it can store the reversed stack and build up from that point
 	// while the object2 can be again used up the reverse the stack..

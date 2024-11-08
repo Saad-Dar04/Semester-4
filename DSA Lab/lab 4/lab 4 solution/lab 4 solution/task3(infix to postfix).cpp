@@ -46,12 +46,12 @@ void infixToPostfix(const T& str) {
 	cout << endl;
 }
 
-//int main() {
-//
-//	
-//	// this function to be accepting a string.
-//	infixToPostfix<string>("((A*(B+C))/D)");
-//	// sir thought us only how to solve this if brackets are involved 
-//	// learn the precedence wala concept from nesoacademy(it has been expalined there in great detail ).
-//	return 0;
-//}
+int main() {
+
+	
+	// this function to be accepting a string.
+	infixToPostfix<string>("((A*(B+C))/D)");
+	// sir thought us only how to solve this if brackets are involved 
+	// learn the precedence wala concept from nesoacademy(it has been expalined there in great detail ).
+	return 0;
+}
