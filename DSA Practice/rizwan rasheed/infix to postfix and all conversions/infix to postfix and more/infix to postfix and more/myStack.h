@@ -213,6 +213,9 @@ void PostfixEvaluation(const char* ptr) {
 	cout << "After postfix evaluation: " << a.pop() << endl;
 }
 
+void loopback() {
+	cout << "Made by Nawal Tariq" << endl;
+}
 
 
 void infixToPrefix(const char* str) {
