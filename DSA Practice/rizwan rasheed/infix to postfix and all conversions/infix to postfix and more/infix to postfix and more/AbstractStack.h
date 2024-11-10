@@ -28,7 +28,7 @@ public:
     // making sure that memory is appropriately freed up
     virtual ~AbstractStack() {
         // freeing up dynamically allocated memory
-        cout << "Abstract Stack destructor has been called" << endl;
+       // cout << "Abstract Stack destructor has been called" << endl;
         delete[] arr;
     }
 };

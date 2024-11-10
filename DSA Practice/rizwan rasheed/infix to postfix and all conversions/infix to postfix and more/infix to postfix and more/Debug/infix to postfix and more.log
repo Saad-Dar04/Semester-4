@@ -1,2 +1,4 @@
 ﻿  Source.cpp
+D:\semester 4\DSA Practice\rizwan rasheed\infix to postfix and all conversions\infix to postfix and more\infix to postfix and more\myStack.h(164,13): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+D:\semester 4\DSA Practice\rizwan rasheed\infix to postfix and all conversions\infix to postfix and more\infix to postfix and more\myStack.h(178): warning C4715: 'calculator': not all control paths return a value
   infix to postfix and more.vcxproj -> D:\semester 4\DSA Practice\rizwan rasheed\infix to postfix and all conversions\infix to postfix and more\Debug\infix to postfix and more.exe
