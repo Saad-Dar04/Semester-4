@@ -53,7 +53,7 @@ public:
 	void enqueue(t data){
 		if (!isFull()){
 			AbstractLinearQueue<t>::arr[AbstractLinearQueue<t>::currentSize++] = data;
-			cout << "student added to queue" << endl;
+			cout << "added to queue" << endl;
 		}
 		else{
 			cout << "queue is full" << endl;

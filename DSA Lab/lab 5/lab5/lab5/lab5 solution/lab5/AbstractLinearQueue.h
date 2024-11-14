@@ -18,7 +18,8 @@
 	
 
 
-
+// forward declaration of class
+class CoffeeShop;
 
 #include<iostream>
 using namespace std;
@@ -53,5 +54,7 @@ public:
 		delete[] arr;
 	}
 
+	// declaring coffeshop as a friend class so that we could access it's attributes
+	friend class CoffeeShop;
 
 };
