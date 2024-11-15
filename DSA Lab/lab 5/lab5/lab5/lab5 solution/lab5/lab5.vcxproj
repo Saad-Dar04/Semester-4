@@ -64,10 +64,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractStack.h" />
     <ClInclude Include="AbstractLinearQueue.h" />
     <ClInclude Include="myLinearQueue.h" />
+    <ClInclude Include="myStack.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="task4.cpp" />
+    <ClCompile Include="task3 infixToPostfix.cpp" />
     <ClCompile Include="Task 1.cpp" />
     <ClCompile Include="Task2.cpp" />
   </ItemGroup>

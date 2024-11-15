@@ -306,7 +306,7 @@ void infixToPrefix(const char* str) {
 	//cout << final << endl;
 
 	cout << "infix: " << str << endl;
-	cout << "prefix: " << prefix << endl;
+	cout << "prefix: " << final << endl;
 	//cout << "after reversing correct anwser is:  " << final<< endl;
 }
 

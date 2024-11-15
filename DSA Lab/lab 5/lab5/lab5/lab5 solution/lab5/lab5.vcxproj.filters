@@ -21,12 +21,24 @@
     <ClInclude Include="myLinearQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AbstractStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="myStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Task 1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Task2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="task3 infixToPostfix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="task4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
