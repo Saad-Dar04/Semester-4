@@ -1,0 +1,6 @@
+﻿  task1.cpp
+D:\semester 4\DSA Practice\mohsin abbas\assignment 1\assignment\assignment\myStack.h(96,13): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  task2.cpp
+  Generating Code...
+D:\semester 4\DSA Practice\mohsin abbas\assignment 1\assignment\assignment\myStack.h(110): warning C4715: 'calculator': not all control paths return a value
+  assignment.vcxproj -> D:\semester 4\DSA Practice\mohsin abbas\assignment 1\assignment\Debug\assignment.exe
