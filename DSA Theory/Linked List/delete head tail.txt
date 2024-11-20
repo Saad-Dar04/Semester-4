@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+class LinkList {
+public:
+	struct node {
+		int data;
+		node *next;
+	};
+
+	LinkList() {
+		head = nullptr;
+		tail = nullptr;
+	}
+	void insertHead(int val) {
+		node *new_node = new node;
+		new_node->data = val;
+		new_node->next = nullptr;
+		if (head == nullptr && tail == nullptr) { // if list is empty
+			head = new_node;
+			tail = new_node;
+		}
+		else{
+			new_node->next = head;
+			head = new_node;
+		}
+	}
+
+	void insertTail(int val) {
+		node *new_node = new node;
+		new_node->data = val;
+		new_node->next = nullptr;
+		if (head == nullptr && tail == nullptr) { // if list is empty
+			head = new_node;
+			tail = new_node;
+		}
+		else{
+			tail->next = new_node;
+			tail = new_node;
+		}
+	}
+
+	void display() {
+		node *tmp = head;
+		while (tmp != nullptr) {
+			cout << tmp->data << " ";
+			tmp = tmp->next;
+		}
+	}
+
+	int deleteHead() {
+		int rt = head->data;
+		node *tmp = head;
+		head =  head->next;
+		delete tmp;
+		tmp = nullptr;
+
+		return rt;
+
+	}
+
+	int deleteTail() {
+		int rt = tail->data;
+		node *tmp = head;
+		while (tmp->next != tail) {
+			tmp = tmp->next;
+		}
+		delete tail;
+		tail = tmp;
+		tail->next = nullptr;
+		return rt;
+	}
+private:
+	node *head;
+	node *tail;
+};
+
+int main()
+{
+	LinkList mylist;
+	mylist.insertTail(5);
+	mylist.insertTail(16);
+	mylist.insertTail(20);
+	mylist.display();
+	cout << endl << "After deletion of tail " << endl;
+	mylist.deleteTail();
+	mylist.display();
+	/*mylist.deleteHead();
+	cout <<endl << "After head deletion ";
+
+	mylist.display();
+
+	mylist.deleteHead();
+	cout << endl << "After head deletion ";
+	mylist.display();*/
+
+
+	return 0;
+}
