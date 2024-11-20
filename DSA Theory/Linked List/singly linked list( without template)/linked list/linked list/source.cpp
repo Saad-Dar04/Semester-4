@@ -12,14 +12,12 @@ int main() {
 	a.display();
 	
 	
-	Sleep(600);
+	Sleep(600); // pauses the console for 600 milliseconds;)
 	
 	a.insertAtHead(40);
 	a.display();
 	a.insertAtTail(50);
 	a.display();
-	cout << a.deleteFromHead() << endl;
-	a.display();
 
 	cout << a.deleteFromHead() << endl;
 	a.display();
@@ -30,8 +28,13 @@ int main() {
 	cout << a.deleteFromHead() << endl;
 	a.display();
 
+
 	cout << a.deleteFromHead() << endl;
 	a.display();
+
+	cout << a.deleteFromHead() << endl;
+	a.display();
+	
 
 	cout << a.deleteFromHead() << endl;
 	a.display();

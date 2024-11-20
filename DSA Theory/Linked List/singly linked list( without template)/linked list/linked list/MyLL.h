@@ -109,9 +109,10 @@ int MyLL::deleteFromHead() {
 		}
 
 		// linked list has multiple node
-		else if(head!=tail) {
+		else if(head!=tail && head!=nullptr) {  // it was giving an error , only that is the reason idhr head!=nullptr , although code was still working , it was j confused cus this condition could arrive but their was no possibility that this could based on the fact that how linked list operates ;)
 			// the condition would've been head!=tail
 			int returningValue = 0;
+			
 			returningValue = head->data; // stored value of data in rv
 			
 			Node* temp = head;
@@ -148,14 +149,22 @@ inline int MyLL::deleteFromTail()
 
 	// ll is non empty---> has multiple nodes.
 	else if (head != nullptr) {
+		int returningValue = tail->data;
+		Node* temp = head;
+		while (temp->next != tail) {
+			temp = temp->next;
+		}
 
+		delete tail;
+		tail = temp;
+		tail->next = nullptr;
 
-
+		return returningValue;
 	}
 
 	else {
 		cout << "konsi condition hae ye bhaiya ;(" << endl;
 	}
 
-	return 0;
+	return int();
 }
