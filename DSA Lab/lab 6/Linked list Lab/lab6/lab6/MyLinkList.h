@@ -26,8 +26,8 @@ public:
 			// all the dynamiacally allocated nodes will delete.
 		}
 		// end pae the pointers would be left head and tail waley they will be nullptr but still i'll do em here
-		head = nullptr;
-		tail = nullptr;
+		AbstractLinkList<t>::head = nullptr;
+		AbstractLinkList<t>::tail = nullptr;
 		// and now the pointers would simply deallocate the memory themselves.
 		// i j need to keep track of the dynamically allocated memory that i've taken care of nicely ;)
 	}
@@ -84,6 +84,7 @@ bool MyLinkList<t>::deleteFromHead() {
 	// if linked list is empty
 	if (AbstractLinkList<t>::head == nullptr && AbstractLinkList<t>::tail == nullptr) {
 		// linked list is empty ;)
+		cout << "linked list is empty cannot delete" << endl;
 		return 0;
 	}
 
@@ -100,7 +101,7 @@ bool MyLinkList<t>::deleteFromHead() {
 		
 		// means multiple nodes exist.
 		else {
-			Node<t>* temp = head;
+			Node<t>* temp = AbstractLinkList<t>::head;
 			AbstractLinkList<t>::head = AbstractLinkList<t>::head->next;
 			delete temp;
 			temp = nullptr; // goood programming practice , in oder to avoid danglin pointer.
@@ -115,6 +116,7 @@ bool MyLinkList<t>::deleteFromTail() {
 	// if linked list is empty
 	if (AbstractLinkList<t>::head == nullptr && AbstractLinkList<t>::tail == nullptr) {
 		// linked list is empty ;)
+		cout << "linked list is empty cannot delete" << endl;
 		return 0;
 	}
 
@@ -135,12 +137,12 @@ bool MyLinkList<t>::deleteFromTail() {
 				temp = temp->next;
 			}
 			// tail sae aik previous node pae poonch kr we wil come out of the loop :)
-			delete AbstractLinkist<t>::tail;
+			delete AbstractLinkList<t>::tail;
 			// both the tail and previous node ka next(temp->next) will be dangling
 			// cus they are still pointing towards memory that has been freed up isliye
 			// we will properly deal with them.
-			tail = temp;
-			tail->next = nullptr;
+			AbstractLinkList<t>::tail = temp;
+			AbstractLinkList<t>::tail->next = nullptr;
 		}
 	}
 
@@ -149,7 +151,7 @@ bool MyLinkList<t>::deleteFromTail() {
 template <typename t>
 bool MyLinkList<t>::isEmpty() {
 	// linked list going to be empty if head and tail are both pointing towards nullptr.
-	return (AbstractLinkList<t>::head == nullptr && AbsractLinkList<t>::tail == nullptr);
+	return (AbstractLinkList<t>::head == nullptr && AbstractLinkList<t>::tail == nullptr);
 }
 
 template <typename t>
@@ -158,10 +160,10 @@ void MyLinkList<t>::display() {
 	if (!isEmpty()) {
 		// if not empty-> then we would display , otherwise we would just tell that the link list is empty :)
 		Node<t>* temp = AbstractLinkList<t>::head;
-		while (temp->next != nullptr) {
+		while (temp != nullptr) {
 			cout << temp->data << " ";
 			temp = temp->next;
-		}
+		}cout << endl;
 		// traversed through the entire loop...
 	}
 	else {
@@ -174,7 +176,7 @@ bool MyLinkList<t>::search(t value) {
 	// if loop is not empty , then serach otherwise
 	if (!isEmpty()) {
 		Node<t>* temp = AbstractLinkList<t>::head;
-		while (temp->next != nullptr) {
+		while (temp != nullptr) {
 			if (temp->data == value) {
 				return 1;
 			}
@@ -221,7 +223,7 @@ bool MyLinkList<t>::deleteValue(t key) {
 			// meaning that we would traverse through the entire array :)
 			while (temp->next != nullptr) {
 				// could be at the head
-				if (temp == head) {
+				if (temp == AbstractLinkList<t>::head) {
 					if (temp->data == key) {
 						deleteFromHead();
 						return 1;
@@ -231,18 +233,18 @@ bool MyLinkList<t>::deleteValue(t key) {
 				else {
 					if (temp->next->data == key) {
 						// if it's tail
-						if (temp->next == tail) {
+						if (temp->next == AbstractLinkList<t>::tail) {
 							deleteFromTail();
 							return 1;
 						}
 						// if it's not tail and lies in btw.
 						else {
-							*Node<t> to_delete = temp->next;
+							Node<t> * to_delete = temp->next;
 							// linking the nodes
 							temp->next = temp->next->next;
 							// temp->next = to_delete->next; -> same shit ;)
 							// deleting using the to_delete pointer
-							delete->next = nullptr;
+							to_delete->next = nullptr;
 							delete to_delete;
 							to_delete = nullptr; // dangling pointer
 							return 1;
@@ -271,7 +273,79 @@ void MyLinkList<t>::insertSorted(t value){
 	// for this the linked list needs to be sorted and then after that i will write code
 	// to insert it at the appropriate position. :)
 
-	// first trying to sort the linked list ;)
+	// first trying to sort the linked list using bubble sorting technique ;)
+	// we will only be sorting if the loop is notempty and has multiple nodes
+	if (!isEmpty() && AbstractLinkList<t>::head != AbstractLinkList<t>::tail) {
 
+		Node<t>* i = AbstractLinkList<t>::head;
+		Node<t>* j = nullptr;
+		// outerloop
+		while (i != AbstractLinkList<t>::tail) {
+			// j hamesha i sae aik agly waley node pae rahy ga just like how bubble sort works:)
+			cout << "coming in " << endl;
+			j = i->next;
+			//innerloop
+			while (j->next != nullptr) {
+				// if the i wala node is smaller than j wala node
+				if (i->data > j->data) {
+					// for swapping all 3 positions would be taken into consideration
+					
+					// swapping with head
+					if (i == AbstractLinkList<t>::head) {
+						cout << "coming here " << endl;
+						i->next = j->next;
+						j->next = i;
+						AbstractLinkList<t>::head = j;
+						// swapping the positions of i and j for the loop to properly work
+						j = i;
+						i = AbstractLinkList<t>::head;
+					}
+
+					// the nodes lie between the head and tail
+					else if (i != AbstractLinkList<t>::head && j != AbstractLinkList<t>::tail) {
+						i->next = j->next;
+						j->next = i;
+						// to get the previous node we will have to use loop as it goes one side.
+						Node<t>* temp = AbstractLinkList<t>::head;
+						while (temp->next != i) { temp = temp->next; }
+						temp->next = j;
+						// swapping the i and j
+						temp = j;
+						j = i;
+						i = temp;
+					}
+
+					// if tail wala node needs to be swapped
+					if (j == AbstractLinkList<t>::tail) {
+						i->next = nullptr;
+						j->next = i;
+						AbstractLinkList<t>::tail = i;
+						// to get the previous node we have to use loop
+						Node<t>* temp = AbstractLinkList<t>::head;
+						while (temp->next != i) { temp = temp->next; }
+						temp->next = j;
+						// swappping i and j
+						temp = j;
+						j = i;
+						i = temp;
+					}
+				}
+				else {
+					// move j one node forward , just like how bubble sort works
+					j = j->next;
+				}
+
+			}
+
+			// jab j sara traverse hougeya hae phir i aik increment houta hae meaning aik node agey ajaey ga ;)
+			i = i->next;
+		}
+
+
+
+	}
+	else {
+		cout << "no sorting cus is empty or has a single node" << endl;
+	}
 }
 

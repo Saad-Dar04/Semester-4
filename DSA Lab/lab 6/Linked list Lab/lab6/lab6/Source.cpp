@@ -1,14 +1,16 @@
 #include"MyLinkList.h"
 
 int main() {
-
+	// insertathead,tail , deletefrom head,tail are working exceptionally , search is working fine , 
 	MyLinkList<int> a;
-	a.insertAtHead(10);
-	a.insertAtTail(20);
+	a.insertAtHead(30);
+	a.insertAtHead(40);
+	a.display();
+	
+	a.insertSorted(10);
+	a.display();
 
-	MyLinkList<string> b;
-	b.insertAtHead("ali");
-	b.insertAtTail("nigga");
 
+	system("pause");
 	return 0;
 }
