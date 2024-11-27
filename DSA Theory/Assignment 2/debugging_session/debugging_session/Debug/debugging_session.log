@@ -1,0 +1,6 @@
+﻿  Source.cpp
+D:\semester 4\DSA Theory\Assignment 2\debugging_session\debugging_session\Source.cpp(104,35): warning C4305: 'argument': truncation from 'double' to 'const float'
+D:\semester 4\DSA Theory\Assignment 2\debugging_session\debugging_session\Source.cpp(104,49): warning C4305: 'argument': truncation from 'double' to 'const float'
+D:\semester 4\DSA Theory\Assignment 2\debugging_session\debugging_session\Source.cpp(108,43): warning C4305: 'argument': truncation from 'double' to 'const float'
+D:\semester 4\DSA Theory\Assignment 2\debugging_session\debugging_session\Source.cpp(108,58): warning C4305: 'argument': truncation from 'double' to 'const float'
+  debugging_session.vcxproj -> D:\semester 4\DSA Theory\Assignment 2\debugging_session\Debug\debugging_session.exe
