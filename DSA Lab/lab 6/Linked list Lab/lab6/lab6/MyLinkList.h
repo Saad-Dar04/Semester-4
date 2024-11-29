@@ -26,11 +26,41 @@ public:
 	// function for displaying the top element of the stack
 	t topElement() {
 		if (!isEmpty()) {
-			return AbstractLinkList<t>::tail;
+			return AbstractLinkList<t>::tail->data;
 		}
 		else {
 			cout << "The stack is empty" << endl;
+			return t();
 		}
+	}
+
+	// ------------> adding function for task3
+	// function for displaying the front element in the queue
+	t frontElement() {
+		if (!isEmpty()) {
+			return AbstractLinkList<t>::head->data;
+		}
+		else {
+			cout << "The stack is empty" << endl;
+			return t();
+		}
+	}
+
+	// ------------> adding function for task4
+	// function for deleting all the duplicate values in the linked list.
+	void deleteDuplicate() {
+
+	}
+
+	// -------------> adding function for task5
+	int nodeCount() {
+		int count = 0;
+		Node<t>* temp = AbstractLinkList<t>::head;
+		while (temp != nullptr) {
+			temp = temp->next;
+			count++;
+		}
+		return count;
 	}
 
 
@@ -189,6 +219,7 @@ bool MyLinkList<t>::deleteFromTail() {
 			// we will properly deal with them.
 			AbstractLinkList<t>::tail = temp;
 			AbstractLinkList<t>::tail->next = nullptr;
+			return 1;
 		}
 	}
 
