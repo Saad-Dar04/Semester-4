@@ -22,6 +22,18 @@ public:
 
 	void bubbleSortLinkedList();
 
+	// -----------> adding function for task2
+	// function for displaying the top element of the stack
+	t topElement() {
+		if (!isEmpty()) {
+			return AbstractLinkList<t>::tail;
+		}
+		else {
+			cout << "The stack is empty" << endl;
+		}
+	}
+
+
 	~MyLinkList() {
 		while (!isEmpty()) {
 			deleteFromHead(); // it will delete until it becomes empty :)
@@ -269,8 +281,12 @@ bool MyLinkList<t>::deleteValue(t key) {
 		
 		temp = temp->next;
 	}
+	return 0 ;
 }
 
+
+////// wrong >>>>>>>>>>>>>>>>>>>>>>
+// 
 //template <typename t>
 //bool MyLinkList<t>::deleteValue(t key) {
 //	// if linked list is empty
@@ -389,7 +405,8 @@ void MyLinkList<t>::insertSorted(t insertValue) {
 }
 
 
-
+// <<<<<<<<<<<<<< wrong >>>>>>>>>>
+// 
 //template <typename t>
 //void MyLinkList<t>::insertSorted(t value){
 //	// used to insert node at the appropriate position in a sorted linked list

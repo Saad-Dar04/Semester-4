@@ -1,4 +1,2 @@
 ﻿  task1.cpp
-D:\semester 4\DSA Lab\lab 6\Linked list Lab\lab6\lab6\MyLinkList.h(272): warning C4715: 'MyLinkList<int>::deleteValue': not all control paths return a value
-D:\semester 4\DSA Lab\lab 6\Linked list Lab\lab6\lab6\MyLinkList.h(183): warning C4715: 'MyLinkList<int>::deleteFromTail': not all control paths return a value
   lab6.vcxproj -> D:\semester 4\DSA Lab\lab 6\Linked list Lab\lab6\Debug\lab6.exe
