@@ -49,7 +49,30 @@ public:
 	// ------------> adding function for task4
 	// function for deleting all the duplicate values in the linked list.
 	void deleteDuplicate() {
-
+		Node<t>* i = AbstractLinkList<t>::head;
+		Node<t>* j = nullptr;
+		Node<t>* to_be_deleted = nullptr;
+		while (i->next!=nullptr) {
+			j = i;
+			while (j->next != nullptr) {
+				if (i->data == j->next->data) {
+					to_be_deleted = j->next;
+					// condition if we are trying to remove from the last node
+					if (to_be_deleted->next == nullptr) {
+						deleteFromTail();
+						break;
+					}
+					else {
+						j->next = to_be_deleted->next;
+						delete to_be_deleted;
+					}
+				}
+				j = j->next;
+			}
+			if (i->next == nullptr)
+				break;
+			i = i->next;
+		}
 	}
 
 	// -------------> adding function for task5
