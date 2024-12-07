@@ -1,0 +1,5 @@
+﻿  task2.cpp
+C:\Users\Saad\source\repos\mid lab d7 practice\mid lab d7 practice\singlyLInkedList.h(174,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Saad\source\repos\mid lab d7 practice\mid lab d7 practice\singlyLInkedList.h(178,1): warning C4305: '*=': truncation from 'double' to 'float'
+C:\Users\Saad\source\repos\mid lab d7 practice\mid lab d7 practice\singlyLInkedList.h(182,1): warning C4305: '*=': truncation from 'double' to 'float'
+  mid lab d7 practice.vcxproj -> C:\Users\Saad\source\repos\mid lab d7 practice\Debug\mid lab d7 practice.exe
