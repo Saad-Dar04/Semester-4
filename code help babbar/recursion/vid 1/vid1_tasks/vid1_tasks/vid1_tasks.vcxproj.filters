@@ -18,7 +18,10 @@
     <ClCompile Include="task1%28factorial%29.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="task2%28powernth%29.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="task3%28head and tail recursion%29.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

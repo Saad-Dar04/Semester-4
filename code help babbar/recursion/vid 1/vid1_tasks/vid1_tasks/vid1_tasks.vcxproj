@@ -139,7 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="task3%28head and tail recursion%29.cpp" />
+    <ClCompile Include="task2%28powernth%29.cpp" />
     <ClCompile Include="task1%28factorial%29.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
