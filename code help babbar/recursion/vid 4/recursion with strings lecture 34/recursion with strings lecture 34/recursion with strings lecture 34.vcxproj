@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="question1_stringrReverseRecusrsion.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="question2_palindrome.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
