@@ -21,5 +21,14 @@
     <ClCompile Include="question2_palindrome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="questin3_powerNORMAL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="question3_powerOPTIMIZED.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

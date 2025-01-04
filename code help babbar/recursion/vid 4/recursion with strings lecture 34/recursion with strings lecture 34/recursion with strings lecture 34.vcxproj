@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="question1_stringrReverseRecusrsion.cpp" />
     <ClCompile Include="question2_palindrome.cpp" />
+    <ClCompile Include="questin3_powerNORMAL.cpp" />
+    <ClCompile Include="question3_powerOPTIMIZED.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
