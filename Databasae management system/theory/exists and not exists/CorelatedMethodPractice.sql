@@ -196,8 +196,57 @@ select 1
 from WORKS_ON as wo
 where e.Ssn = wo.Essn);
 
--- 10 Show department names which are not controlling any project and has a location in Houston. 
-select Dname
-from DEPARTMENT
-where not exists(select 1
-from DEPARTMENT AS d
+-- practice questions in any all
+ -- 1 Show department names in which some workers works with salary> 30,000 or it is located in Stafford. 
+
+ select d.Dname
+ from DEPARTMENT as d inner join DEPT_LOCATIONS as dl
+ on d.Dnumber = dl.Dnumber
+ where dl.location like '%Stafford%'
+ union
+ select dd.Dname
+ from DEPARTMENT as dd inner join EMPLOYEE as e
+ on e.Dno = dd.Dnumber
+ where e.Salary > 30000;
+ 
+ 
+ -- 2 Show employee ssn’s who are managers but don’t have any dependents. 
+ select distinct mgr.Ssn
+ from EMPLOYEE as e inner join EMPLOYEE as mgr
+ on mgr.Ssn = e.Super_ssn
+ Where mgr.Ssn not in(select distinct ESSN from DEPENDENT);
+ 
+ -- 3 Show manager name who have no dependents. 
+ select mgr.Fname
+ from EMPLOYEE as e inner join EMPLOYEE as mgr
+ on e.Super_ssn = mgr.Ssn
+ where mgr.Ssn not in(
+ select Essn from DEPENDENT);
+ 
+ -- 4 Make a list of all project numbers for projects that
+ -- involve an employee whose last name is smith either as a worker 
+ -- or as a manager of dept who controls the project. 
+-- smith as a worker
+select wo.Pno
+from EMPLOYEE as e inner join  WORKS_ON AS wo
+on e.Ssn = wo.Essn
+where e.Lname = 'Smith'
+union all
+select p.Pnumber
+from DEPARTMENT as d inner join EMPLOYEE as ee
+ON d.Mgr_ssn = ee.Ssn and ee.Lname = 'Smith'
+inner join PROJECT as p
+on p.Dnum = d.Dnumber;
+SHOW COLUMNS FROM DEPARTMENT;
+
+
+-- 5 List names of employees who do not work on any project. 
+select Fname
+from EMPLOYEE 
+where Ssn not in (
+select distinct Essn 
+from WORKS_ON );
+ 
+ 
+ -- 6 Fine the names of all employees who work on atleast one project
+ -- located in Houston but whose department has not located in Houston. 
